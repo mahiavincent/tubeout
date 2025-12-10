@@ -75,7 +75,7 @@ export function PricingSection() {
           <div className="flex justify-center">
             <div className="rounded-lg border px-4 py-1">Subscription plan</div>
           </div>
-          <h2 className="font-bold text-3xl tracking-tighter lg:text-4xl">
+          <h2 className="font-bold text-center text-3xl tracking-tighter lg:text-4xl">
             Simple, Transparent Pricing
           </h2>
           <p className="text-center text-muted-foreground text-sm">
