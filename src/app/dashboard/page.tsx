@@ -97,8 +97,8 @@ export default function Page() {
                                 </div>
                             </div>
                             <div className="border-1 border-stone-200 dark:border-stone-200/10 flex-1 rounded-xl md:h-[20%] p-3 overflow-y-auto">
-                                <h4 className="scroll-m-20 text-lg font-semibold tracking-tight">Find Creators</h4>
-                                <div className="flex gap-3 flex-col-reverse mt-2 w-auto md:flex-row">
+                                <h4 className="scroll-m-20 text-lg font-semibold tracking-tight">Overview</h4>
+                                {/* <div className="flex gap-3 flex-col-reverse mt-2 w-auto md:flex-row">
                                     <div className="flex items-center border-1 border-stone-200 dark:border-stone-200/20 rounded-lg px-3 w-[100%]">
                                         <Search color="gray" size={21} onClick={() => toast.info('Welcome to TubeOut', { position: 'top-center' })}></Search>
                                         <Input className="text-sm dark:bg-neutral shadow-none w-[100%] focus-visible:outline-none focus-visible:ring-0 focus:ring-0 border-0" type="text" placeholder="Search keywords (e.g., 'tech review', 'fitness coach')"></Input>
@@ -115,7 +115,7 @@ export default function Page() {
                                             placeholder="Country"
                                         ></Combobox>
                                     </div>
-                                </div>
+                                </div> */}
                                 <EmptyDemo ></EmptyDemo>
                             </div>
                         </div>

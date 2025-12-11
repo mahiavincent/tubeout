@@ -17,15 +17,18 @@ import { Badge } from "@/components/ui/badge";
 
 const plans = [
   {
-    name: "Starter",
+    name: "Free",
     price: "$0",
     period: "/month",
-    description: "Perfect for personal projects",
+    description: "For creators & freelancers testing the tool",
     features: [
-      "10 Components",
-      "Community Support",
-      "Basic Animations",
-      "Documentation",
+      "10 Creator Searches/day",
+      "10 Contacts Revealed/day",
+      "Basic Ranking",
+      "CSV Export (Watermarked only)",
+      "Single Automated Email/ Sequence Preview",
+      "No Outreach Automation",
+      "No meeting scheduling automation"
     ],
     popular: false,
   },
@@ -33,27 +36,50 @@ const plans = [
     name: "Pro",
     price: "$29",
     period: "/month",
-    description: "Best for growing businesses",
+    description: "Ideal for freelancers, and small businesses",
     features: [
-      "50+ Components",
-      "Priority Support",
-      "Advanced Animations",
-      "Source Code",
-      "Custom Requests",
+      "Unlimited Searces",
+      "Up to 300 Contacts Revealed/month",
+      "Full Ranking Algorithm",
+      "CSV Export (No Watermark)",
+      "Automated Outreach (Up to 200 automated emails/month)",
+      "Meeting Automation",
+      "Priority Access",
     ],
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "$99",
+    name: "Growth",
+    price: "$79",
     period: "/month",
-    description: "For large-scale applications",
+    description: "For small teams and agencies",
     features: [
-      "Unlimited Components",
-      "24/7 Support",
-      "Premium Animations",
-      "White-label",
-      "Dedicated Team",
+      "Unlimited Searches",
+      "1,500 Contacts Revealed/month",
+      "Full Ranking Algorithm",
+      "CSV Export (No Watermark)",
+      "Automated Outreach (1,000 automated emails/month)",
+      "Meeting Scheduling (Google Calendar Integration/ Calendly auto-sync)",
+      "Team Accounts (up to 5)",
+      "Higher Worker Priority"
+    ],
+    popular: false,
+  },
+  {
+    name: "Enterprise",
+    price: "$149",
+    period: "/month",
+    description: "For large agencies, influencer management companies and media teams",
+    features: [
+      "Unlimited contacts",
+      "Unlimited outreach",
+      "Premium priority queue",
+      "Bulk CSV generation",
+      "Custom ranking criteria",
+      "Team accounts(20+)",
+      "SLA + Dedicated support",
+      "Full export with no watermark",
+      "Custom domain for outreach",
     ],
     popular: false,
   },
@@ -83,7 +109,7 @@ export function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mt-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-4 mt-4">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -154,7 +180,7 @@ export function PricingSection() {
                           }}
                           className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10"
                         >
-                          <Check className="h-3 w-3 text-accent" />
+                          <Check className="h-3 w-3 text-neutral-100" />
                         </motion.div>
                         <span>{feature}</span>
                       </motion.li>

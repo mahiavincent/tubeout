@@ -13,7 +13,7 @@ import {
 
 export function EmptyDemo() {
     return (
-        <Empty className="flex items-center mt-10 md:mt-1">
+        <Empty className="flex items-center mt-10 md:mt-0">
             <EmptyHeader>
                 <EmptyMedia variant="icon">
                     <IconEyeSearch />
@@ -24,16 +24,16 @@ export function EmptyDemo() {
                     your first creators.
                 </EmptyDescription>
             </EmptyHeader>
-            {/* <EmptyContent>
+            <EmptyContent>
                 <div className="flex gap-2">
-                    <Button>Create Project</Button>
-                    <Button variant="outline">Import Project</Button>
+                    <Button>Find Creators</Button>
+                    <Button variant="outline">Import CSV</Button>
                 </div>
-            </EmptyContent> */}
+            </EmptyContent>
             <Button
                 variant="link"
                 asChild
-                className="text-muted-foreground"
+                className="text-muted-foreground text-[12px]"
                 size="sm"
             >
                 <a href="#">

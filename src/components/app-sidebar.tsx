@@ -11,7 +11,7 @@ import {
   PieChart,
   Send,
   Settings2,
-  SquareTerminal,
+  LayoutDashboard
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -36,67 +36,59 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Find Creators",
           url: "#",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
+          title: "Contacts Export",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Automation",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Send Email",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Set up Meeting",
           url: "#",
         },
       ],
     },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
+    // {
+    //   title: "Documentation",
+    //   url: "#",
+    //   icon: BookOpen,
+    //   items: [
+    //     {
+    //       title: "Introduction",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Get Started",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Tutorials",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Changelog",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
     {
       title: "Settings",
       url: "#",
@@ -107,7 +99,7 @@ const data = {
           url: "#",
         },
         {
-          title: "Team",
+          title: "Profile",
           url: "#",
         },
         {
@@ -135,17 +127,17 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "Gmail",
       url: "#",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "Google Calendar",
       url: "#",
       icon: PieChart,
     },
     {
-      name: "Travel",
+      name: "Google Meet",
       url: "#",
       icon: Map,
     },
