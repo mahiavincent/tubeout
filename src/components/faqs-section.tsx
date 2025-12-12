@@ -1,4 +1,5 @@
 "use client";
+
 import {
 	Accordion,
 	AccordionContent,
@@ -7,16 +8,123 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { CreditCard, Feather, LayoutGrid, LifeBuoy, Power } from "lucide-react";
+
+import {
+	LayoutGrid,
+	Rocket,
+	Search,
+	MailSearch,
+	CreditCard,
+	LifeBuoy,
+} from "lucide-react";
+
 import React from "react";
+
+//
+// -----------------------------
+// Categories
+// -----------------------------
+//
 
 const categories = [
 	{ icon: LayoutGrid, id: "all", label: "All Topics" },
-	{ icon: Power, id: "getting-started", label: "Getting Started" },
-	{ icon: Feather, id: "features", label: "Features" },
+	{ icon: Rocket, id: "getting-started", label: "Getting Started" },
+	{ icon: Search, id: "features", label: "Features" },
 	{ icon: CreditCard, id: "billing", label: "Billing" },
 	{ icon: LifeBuoy, id: "support", label: "Support" },
 ];
+
+//
+// -----------------------------
+// FAQs (CUSTOMIZED FOR YOUR APP)
+// -----------------------------
+//
+
+const faqs = [
+	// GETTING STARTED --------------------------
+	{
+		id: 1,
+		category: "getting-started",
+		title: "How do I find YouTube creator emails?",
+		content:
+			"Enter a keyword or niche, apply filters like country or subscriber range, and run a search. The app automatically scans channels and extracts verified emails from their About pages.",
+	},
+	{
+		id: 2,
+		category: "getting-started",
+		title: "Do I need to install anything?",
+		content:
+			"No installation required for the web version. For heavy scraping, the desktop version offers a faster standalone executable with no setup needed.",
+	},
+
+	// FEATURES ----------------------------------
+	{
+		id: 3,
+		category: "features",
+		title: "How accurate are the emails?",
+		content:
+			"All emails are fetched directly from the creator’s YouTube About page, ensuring they are real, verified, and public.",
+	},
+	{
+		id: 4,
+		category: "features",
+		title: "Can I export results to CSV?",
+		content:
+			"Absolutely! Export clean CSV files containing creator names, channel links, subscriber data, niches, and verified emails. Advanced users can export without watermarks.",
+	},
+	{
+		id: 5,
+		category: "features",
+		title: "Does it support outreach automation?",
+		content:
+			"Yes! Advanced plans include automated emailing, templated outreach messages, follow-ups, scheduling tools, and integration options.",
+	},
+	{
+		id: 6,
+		category: "features",
+		title: "Can I search in bulk?",
+		content:
+			"Yes. The advanced plan allows multi-keyword searches, unlimited runs, and high-speed scraping using our optimized headless browser.",
+	},
+
+	// BILLING -----------------------------------
+	{
+		id: 7,
+		category: "billing",
+		title: "What’s included in each plan?",
+		content:
+			"The Basic plan offers limited searches and CSV downloads with a watermark. The Advanced plan includes unlimited searches, fast scraping, no-watermark exports, multi-keyword input, and automation tools.",
+	},
+	{
+		id: 8,
+		category: "billing",
+		title: "Do unused credits carry over?",
+		content:
+			"Yes. Any unused search credits automatically roll over to the next billing cycle depending on your subscription.",
+	},
+
+	// SUPPORT -----------------------------------
+	{
+		id: 9,
+		category: "support",
+		title: "How do I get help or report an issue?",
+		content:
+			"You can contact us anytime at support@yourapp.com or use the in-app support form. Our team typically responds within 12–24 hours.",
+	},
+	{
+		id: 10,
+		category: "support",
+		title: "Do you offer onboarding or tutorials?",
+		content:
+			"Yes! We provide quick-start guides, videos, and premium onboarding for advanced plan users.",
+	},
+];
+
+//
+// -----------------------------
+// Main Component
+// -----------------------------
+//
 
 export function FaqsSection() {
 	const [activeCategory, setActiveCategory] = React.useState("all");
@@ -35,23 +143,28 @@ export function FaqsSection() {
 	return (
 		<section id="faq" className="mx-auto min-h-screen w-full max-w-5xl">
 			<div className="flex flex-col items-center justify-center gap-4 px-4 py-16">
-				<h2 className="text-balance font-black font-mono text-4xl md:text-5xl lg:font-black">
-					FaQs
+				<h2 className="text-balance font-black font-mono text-4xl md:text-5xl">
+					FAQs
 				</h2>
-				<p className="text-muted-foreground">Your questions answered here.</p>
+				<p className="text-muted-foreground">
+					Everything you need to know about the creator email finder.
+				</p>
 			</div>
+
 			<div className="relative grid min-h-full grid-cols-1 py-12 md:grid-cols-3">
+
+				{/* Category Sidebar */}
 				<div className="flex h-full items-start justify-center border-b pb-2 md:border-b-0">
 					<div className="flex w-max flex-wrap items-start justify-start gap-2 md:flex-col md:justify-center">
 						{categories.map((cat) => (
 							<Button
+								key={cat.id}
+								onClick={() => setActiveCategory(cat.id)}
+								variant={activeCategory === cat.id ? "outline" : "ghost"}
 								className={cn(
 									"border border-transparent",
 									activeCategory === cat.id && "border-border"
 								)}
-								key={cat.id}
-								onClick={() => setActiveCategory(cat.id)}
-								variant={activeCategory === cat.id ? "outline" : "ghost"}
 							>
 								<cat.icon className="size-4" />
 								{cat.label}
@@ -59,6 +172,8 @@ export function FaqsSection() {
 						))}
 					</div>
 				</div>
+
+				{/* FAQ Accordion */}
 				<div className="col-span-2 space-y-5 px-4 py-5">
 					{currentCategory && (
 						<div className="flex items-center gap-2">
@@ -66,6 +181,7 @@ export function FaqsSection() {
 							<span className="font-medium">{currentCategory.label}</span>
 						</div>
 					)}
+
 					<Accordion
 						className="space-y-2"
 						collapsible
@@ -74,9 +190,9 @@ export function FaqsSection() {
 					>
 						{filtered.map((item) => (
 							<AccordionItem
-								className="border-b-0"
 								key={item.id}
 								value={item.id.toString()}
+								className="border-b-0"
 							>
 								<AccordionTrigger className="border bg-card px-4 shadow hover:no-underline">
 									{item.title}
@@ -93,69 +209,3 @@ export function FaqsSection() {
 		</section>
 	);
 }
-
-const faqs = [
-	{
-		id: 1,
-		category: "getting-started",
-		title: "How do I create my first project?",
-		content:
-			'Click the "New Project" button in your dashboard, choose a template or start from scratch, customize your project name and settings, and you\'ll be ready to start building in seconds.',
-	},
-	{
-		id: 2,
-		category: "getting-started",
-		title: "What are the system requirements?",
-		content:
-			"Efferd works on any modern web browser including Chrome, Firefox, Safari, and Edge. No special software installation is required—just visit our platform and log in.",
-	},
-	{
-		id: 3,
-		category: "features",
-		title: "Can I use Efferd for team collaboration?",
-		content:
-			"Absolutely! Invite team members, set role-based permissions, leave comments on components, and track changes in real-time. Our collaboration features are built for teams of all sizes.",
-	},
-	{
-		id: 4,
-		category: "features",
-		title: "Is there a component library?",
-		content:
-			"Yes, Efferd includes a comprehensive library of pre-built, customizable components. You can also create your own reusable components and share them across your projects.",
-	},
-	{
-		id: 5,
-		category: "features",
-		title: "Do you support custom integrations?",
-		content:
-			"We support integrations with GitHub, GitLab, Figma, Slack, and major cloud providers. For custom integrations, contact our support team to discuss your needs.",
-	},
-	{
-		id: 6,
-		category: "billing",
-		title: "What payment methods do you accept?",
-		content:
-			"We accept all major credit cards, PayPal, and bank transfers for annual plans. Invoicing is available for enterprise customers.",
-	},
-	{
-		id: 7,
-		category: "billing",
-		title: "Can I change my plan anytime?",
-		content:
-			"Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate your billing accordingly.",
-	},
-	{
-		id: 8,
-		category: "support",
-		title: "How do I report a bug?",
-		content:
-			"Use the in-app feedback button or email support@efferd.com with details about the issue. Our team typically responds within 24 hours.",
-	},
-	{
-		id: 9,
-		category: "support",
-		title: "Do you offer training or onboarding?",
-		content:
-			"We provide video tutorials, documentation, and live webinars. Premium plans include personalized onboarding sessions with our support team.",
-	},
-];
