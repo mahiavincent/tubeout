@@ -41,7 +41,7 @@ export function HeroSection() {
       className="flex min-h-[500px] flex-col items-center justify-center px-4 py-16 text-center"
     >
       <motion.div variants={itemVariants} className="mb-4">
-        <span className="inline-flex items-center gap-2 rounded-full border dark:border-white/20 dark:bg-white/10 px-4 py-1.5 text-sm font-medium text-[var(--muted-foreground)]">
+        <span className="inline-flex items-center gap-2 rounded-full border dark:border-white/20 dark:bg-white/10 px-4 py-1.5 text-xs font-medium text-[var(--muted-foreground)] md:text-sm">
           <Sparkles className="h-4 w-4" />
           New Research Tool
         </span>
@@ -60,7 +60,7 @@ export function HeroSection() {
 
       <motion.p
         variants={itemVariants}
-        className="mb-8 max-w-2xl text-lg text-[var(--foreground)]/70"
+        className="mb-8 max-w-2xl text-sm text-[var(--foreground)]/70 md:text-lg"
       >
         Automate your outreach workflow with our smart tool that searches channels,
         unlocks emails, and exports clean lead lists — all in seconds.
@@ -85,22 +85,22 @@ export function HeroSection() {
         className="mt-12 flex items-center gap-8 text-sm text-[var(--foreground)]/60"
       >
         <div>
-          <div className="text-2xl font-bold text-[var(--foreground)]">
+          <div className="text-xl font-bold text-[var(--foreground)] md:text-2xl">
             10k+
           </div>
-          <div>Emails Extracted</div>
+          <div className="text-xs md:text-sm">Emails Extracted</div>
         </div>
         <div className="h-8 w-px bg-[var(--border)]" />
         <div>
-          <div className="text-2xl font-bold text-[var(--foreground)]">50+</div>
-          <div>Niches Supported</div>
+          <div className="text-xl font-bold text-[var(--foreground)] md:text-2xl">50+</div>
+          <div className="text-xs md:text-sm">Niches Supported</div>
         </div>
         <div className="h-8 w-px bg-[var(--border)]" />
         <div>
-          <div className="text-2xl font-bold text-[var(--foreground)]">
+          <div className="text-xl font-bold text-[var(--foreground)] md:text-2xl">
             100%
           </div>
-          <div>Verified Results</div>
+          <div className="text-xs md:text-sm">Verified Results</div>
         </div>
       </motion.div>
     </motion.div>
