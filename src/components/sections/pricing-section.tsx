@@ -90,7 +90,7 @@ export function PricingSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="w-full px-4 py-16">
+    <div id="pricing" ref={ref} className="w-full px-4 py-16">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -180,14 +180,14 @@ export function PricingSection() {
                           }}
                           className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10"
                         >
-                          <Check className="h-3 w-3 text-neutral-100" />
+                          <Check className="h-3 w-3 text-neutral" />
                         </motion.div>
                         <span>{feature}</span>
                       </motion.li>
                     ))}
                   </ul>
 
-                  <Link href='/signup'>
+                  <Link href='/waitlist'>
                     <Button
                       className="w-full"
                       variant={plan.popular ? "default" : "outline"}

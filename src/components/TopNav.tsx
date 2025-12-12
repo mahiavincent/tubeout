@@ -21,7 +21,7 @@ export default function TopNav() {
         { name: "Home", link: "/" },
         { name: "Features", link: "#features" },
         { name: "Pricing", link: "#pricing" },
-        { name: "Contact", link: "#contact" },
+        { name: "Faq", link: "#faq" },
     ];
 
     return (
@@ -36,11 +36,11 @@ export default function TopNav() {
                 />
 
                 <div className="flex items-center gap-2">
-                    <NavbarButton variant="secondary" href="/login">
+                    <NavbarButton variant="secondary" href="/waitlist">
                         Login
                     </NavbarButton>
 
-                    <NavbarButton variant="dark" href="/signup">
+                    <NavbarButton variant="dark" href="/waitlist">
                         Sign Up
                     </NavbarButton>
                 </div>
@@ -68,11 +68,11 @@ export default function TopNav() {
                         </a>
                     ))}
 
-                    <NavbarButton href="/login" variant="secondary" className="w-full">
+                    <NavbarButton href="/waitlist" variant="secondary" className="w-full">
                         Login
                     </NavbarButton>
 
-                    <NavbarButton href="/signup" variant="dark" className="w-full mt-2">
+                    <NavbarButton href="/waitlist" variant="dark" className="w-full mt-2">
                         Sign Up
                     </NavbarButton>
                 </MobileNavMenu>

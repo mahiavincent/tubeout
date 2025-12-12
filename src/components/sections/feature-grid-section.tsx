@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Code, Zap, Shield, Globe, Lock, Sparkles } from "lucide-react";
+import { Code, Zap, Shield, Globe, Lock, Sparkles, Search, MailSearch, ListChecks, Download, Settings2 } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -14,34 +14,40 @@ import {
 
 const features = [
   {
-    icon: Code,
-    title: "Developer Friendly",
-    description: "Built with TypeScript and modern React patterns",
+    icon: Search,
+    title: "Smart Creator Search",
+    description:
+      "Find YouTube creators instantly using niche, keywords, subscriber range, and country filters.",
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized animations that never lag",
+    icon: MailSearch,
+    title: "Verified Email Extraction",
+    description:
+      "Automatically collects real, verified creator emails directly from channel About pages.",
   },
   {
-    icon: Shield,
-    title: "Production Ready",
-    description: "Tested and ready for your next project",
+    icon: ListChecks,
+    title: "Ranked Leads",
+    description:
+      "Creators are ranked by relevance, audience quality, and engagement potential.",
   },
   {
-    icon: Globe,
-    title: "Responsive",
-    description: "Works perfectly on all devices",
+    icon: Download,
+    title: "Instant CSV Export",
+    description:
+      "Download clean CSV files containing creator names, channels, niches, and verified contact emails.",
   },
   {
-    icon: Lock,
-    title: "Secure",
-    description: "Built with security best practices",
+    icon: Settings2,
+    title: "Automation Tools",
+    description:
+      "Optional automations for outreach: auto-emailing, meeting setup, and workflow extensions.",
   },
   {
     icon: Sparkles,
-    title: "Modern",
-    description: "Using the latest web technologies",
+    title: "Watermark Control",
+    description:
+      "Choose between watermark or no-watermark exports depending on your subscription level.",
   },
 ];
 
@@ -75,7 +81,7 @@ export function FeatureGridSection() {
   };
 
   return (
-    <div ref={ref} className="w-full px-4 py-16">
+    <div id="features" ref={ref} className="w-full px-4 py-16">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +96,7 @@ export function FeatureGridSection() {
             Why Choose Us
           </h2>
           <p className="text-center text-muted-foreground text-sm">
-            Everything you need to build amazing applications
+            Everything we offer to you
           </p>
         </motion.div>
 

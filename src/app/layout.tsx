@@ -17,6 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TubeOut - MVP",
   description: "Extract public visible creator emails from Youtube About pages",
+  icons: {
+    icon: [
+      { url: "/favicon-light.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-dark.svg", media: "(prefers-color-scheme: dark)" },
+    ]
+  }
 };
 
 export default function RootLayout({

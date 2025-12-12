@@ -33,7 +33,7 @@ export function FaqsSection() {
 	);
 
 	return (
-		<section className="mx-auto min-h-screen w-full max-w-5xl">
+		<section id="faq" className="mx-auto min-h-screen w-full max-w-5xl">
 			<div className="flex flex-col items-center justify-center gap-4 px-4 py-16">
 				<h2 className="text-balance font-black font-mono text-4xl md:text-5xl lg:font-black">
 					FaQs

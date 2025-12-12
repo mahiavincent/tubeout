@@ -67,13 +67,13 @@ export function HeroSection() {
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex gap-4">
-        <Link href='/signup'>
+        <Link href='/waitlist'>
           <Button size="lg" className="gap-2">
             Get Started
             <ArrowRight className="h-4 w-4" />
           </Button>
         </Link>
-        <Link href='/signup'>
+        <Link href='/waitlist'>
           <Button size="lg" variant="outline">
             View Demo
           </Button>
