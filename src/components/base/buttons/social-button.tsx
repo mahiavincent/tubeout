@@ -14,7 +14,7 @@ export const styles = sortCx({
 
     sizes: {
         sm: {
-            root: "gap-2 rounded-lg px-3 py-2 text-sm before:rounded-[7px] data-icon-only:p-2",
+            root: "gap-2 rounded-lg px-3 py-2 text-sm before:rounded-[7px] data-icon-only:p-1",
         },
         md: {
             root: "gap-2.5 rounded-lg px-3.5 py-2.5 text-sm before:rounded-[7px] data-icon-only:p-2.5",

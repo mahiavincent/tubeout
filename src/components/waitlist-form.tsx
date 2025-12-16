@@ -20,6 +20,7 @@ import { supabase } from "@/lib/supabase/client"
 import { useState } from "react";
 import { toast } from "sonner";
 import { Spinner } from "./ui/spinner";
+import { CountingNumber } from "./animate-ui/primitives/texts/counting-number";
 
 export function WaitListForm({
     className,
@@ -90,6 +91,9 @@ export function WaitListForm({
                                     </Button>
                                 )}
                             </Field>
+                            <FieldDescription className="text-center">
+                                <CountingNumber number={700}></CountingNumber> users already booked!!
+                            </FieldDescription>
                         </FieldGroup>
                     </form>
                 </CardContent>
