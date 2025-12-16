@@ -3,7 +3,7 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import type { ButtonProps as AriaButtonProps } from "react-aria-components";
 import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
-import { cx, sortCx } from "@/lib/utils/cx";
+import { cx, sortCx } from "@/utils/cx";
 import { AppleLogo, DribbleLogo, FacebookLogo, FigmaLogo, FigmaLogoOutlined, GoogleLogo, TwitterLogo } from "./social-logos";
 
 export const styles = sortCx({
@@ -63,7 +63,7 @@ interface ButtonProps extends CommonProps, DetailedHTMLProps<Omit<ButtonHTMLAttr
     slot?: AriaButtonProps["slot"];
 }
 
-interface LinkProps extends CommonProps, DetailedHTMLProps<Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "color">, HTMLAnchorElement> {}
+interface LinkProps extends CommonProps, DetailedHTMLProps<Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "color">, HTMLAnchorElement> { }
 
 export type SocialButtonProps = ButtonProps | LinkProps;
 
@@ -130,10 +130,10 @@ export const SocialButton = ({ size = "lg", theme = "brand", social, className, 
                     theme === "gray"
                         ? colorStyles.icon
                         : theme === "brand" && (social === "facebook" || social === "apple" || social === "twitter")
-                          ? "text-white"
-                          : theme === "color" && (social === "apple" || social === "twitter")
-                            ? "text-alpha-black"
-                            : "",
+                            ? "text-white"
+                            : theme === "color" && (social === "apple" || social === "twitter")
+                                ? "text-alpha-black"
+                                : "",
                 )}
                 colorful={
                     (theme === "brand" && (social === "google" || social === "figma")) ||
