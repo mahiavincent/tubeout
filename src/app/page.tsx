@@ -8,6 +8,7 @@ import { TestimonialsColumn } from "@/components/testimonials-columns";
 import { FaqsSection } from "@/components/faqs-section";
 import { LogoCloud } from "@/components/logo-cloud";
 import TopNav from '@/components/TopNav'
+import AILoadingState from "@/components/kokonutui/ai-loading";
 
 const testimonials = [
   {
@@ -75,6 +76,7 @@ export default function Home() {
     <div className="relative min-h-screen scrollbar-hide max-h-max">
       <TopNav></TopNav>
       <HeroSection></HeroSection>
+      <AILoadingState></AILoadingState>
       <FeatureGridSection></FeatureGridSection>
       <PricingSection></PricingSection>
       <section className="relative py-10">

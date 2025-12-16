@@ -2,20 +2,27 @@
 
 import * as React from "react"
 import {
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  LayoutDashboard
-} from "lucide-react"
+  IconCamera,
+  IconChartBar,
+  IconDashboard,
+  IconDatabase,
+  IconFileAi,
+  IconFileDescription,
+  IconFileWord,
+  IconFolder,
+  IconHelp,
+  IconInnerShadowTop,
+  IconListDetails,
+  IconMail,
+  IconReport,
+  IconSearch,
+  IconSettings,
+  IconUsers,
+  IconVideo,
+} from "@tabler/icons-react"
 
+import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -27,6 +34,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { GalleryVerticalEndIcon } from "lucide-react"
 
 const data = {
   user: {
@@ -37,77 +45,73 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
+      url: "/dashboard",
+      icon: IconDashboard,
+    },
+    {
+      title: "Content Creators",
+      url: "/creators",
+      icon: IconUsers,
+    },
+    {
+      title: "Email Automation",
       url: "#",
-      icon: LayoutDashboard,
+      icon: IconMail,
+    },
+    {
+      title: "Meeting Setup",
+      url: "#",
+      icon: IconVideo,
+    },
+    {
+      title: "Analytics",
+      url: "#",
+      icon: IconChartBar,
+    },
+  ],
+  navClouds: [
+    {
+      title: "Capture",
+      icon: IconCamera,
       isActive: true,
+      url: "#",
       items: [
         {
-          title: "Find Creators",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Contacts Export",
+          title: "Archived",
           url: "#",
         },
       ],
     },
     {
-      title: "Automation",
+      title: "Proposal",
+      icon: IconFileDescription,
       url: "#",
-      icon: Bot,
       items: [
         {
-          title: "Send Email",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Set up Meeting",
+          title: "Archived",
           url: "#",
         },
       ],
     },
-    // {
-    //   title: "Documentation",
-    //   url: "#",
-    //   icon: BookOpen,
-    //   items: [
-    //     {
-    //       title: "Introduction",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Get Started",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Tutorials",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Changelog",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
     {
-      title: "Settings",
+      title: "Prompts",
+      icon: IconFileAi,
       url: "#",
-      icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Active Proposals",
           url: "#",
         },
         {
-          title: "Profile",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Archived",
           url: "#",
         },
       ],
@@ -115,53 +119,48 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Support",
+      title: "Settings",
       url: "#",
-      icon: LifeBuoy,
+      icon: IconSettings,
     },
     {
-      title: "Feedback",
+      title: "Get Help",
       url: "#",
-      icon: Send,
+      icon: IconHelp,
     },
   ],
-  projects: [
+  documents: [
     {
-      name: "Gmail",
+      name: "Data Library",
       url: "#",
-      icon: Frame,
+      icon: IconDatabase,
     },
     {
-      name: "Google Calendar",
+      name: "Reports",
       url: "#",
-      icon: PieChart,
+      icon: IconReport,
     },
     {
-      name: "Google Meet",
+      name: "Word Assistant",
       url: "#",
-      icon: Map,
+      icon: IconFileWord,
     },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar
-      className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
-      {...props}
-    >
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
+            <SidebarMenuButton
+              asChild
+              className="data-[slot=sidebar-menu-button]:!p-1.5"
+            >
               <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">TubeOut</span>
-                  <span className="truncate text-xs">Free Plan</span>
-                </div>
+                <GalleryVerticalEndIcon className="!size-5" />
+                <span className="text-base font-semibold">TubeOut</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -169,7 +168,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/* <NavDocuments items={data.documents} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

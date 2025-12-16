@@ -12,45 +12,50 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const TASK_SEQUENCES = [
+export const TASK_SEQUENCES = [
     {
-        status: "Searching the web",
+        status: "Searching YouTube creators",
         lines: [
-            "Initializing web search...",
-            "Scanning web pages...",
-            "Visiting 5 websites...",
-            "Analyzing content...",
-            "Generating summary...",
+            "Initializing YouTube search engine...",
+            "Applying niche and keyword filters...",
+            "Filtering by subscriber range...",
+            "Filtering by country...",
+            "Collecting relevant creator channels...",
         ],
     },
     {
-        status: "Analyzing results",
+        status: "Extracting verified emails",
         lines: [
-            "Analyzing search results...",
-            "Generating summary...",
-            "Checking for relevant information...",
-            "Finalizing analysis...",
-            "Setting up lazy loading...",
-            "Configuring caching strategies...",
-            "Running performance tests...",
-            "Finalizing optimizations...",
+            "Opening creator About pages...",
+            "Triggering email verification flow...",
+            "Detecting available contact emails...",
+            "Validating email authenticity...",
+            "Removing duplicates and invalid entries...",
         ],
     },
     {
-        status: "Enhancing UI/UX",
+        status: "Ranking & preparing leads",
         lines: [
-            "Initializing UI enhancement scan...",
-            "Checking accessibility compliance...",
-            "Analyzing component animations...",
-            "Reviewing loading states...",
-            "Testing responsive layouts...",
-            "Optimizing user interactions...",
-            "Validating color contrast...",
-            "Checking motion preferences...",
-            "Finalizing UI improvements...",
+            "Analyzing channel relevance...",
+            "Evaluating engagement metrics...",
+            "Ranking creators by outreach potential...",
+            "Formatting lead profiles...",
+            "Preparing structured lead data...",
+        ],
+    },
+    {
+        status: "Exporting & automating outreach",
+        lines: [
+            "Generating clean CSV file...",
+            "Applying watermark settings...",
+            "Exporting creator contact list...",
+            "Initializing email automation...",
+            "Scheduling meetings and follow-ups...",
+            "Finalizing outreach workflow...",
         ],
     },
 ];
+
 
 const LoadingAnimation = ({ progress }: { progress: number }) => (
     <div className="relative w-6 h-6">
