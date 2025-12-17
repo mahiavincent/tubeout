@@ -34,10 +34,11 @@ export default function Page() {
         <div className="flex flex-1 flex-col">
           <div className="@container/main flex flex-1 flex-col gap-2">
             <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+              <div className="mx-4.5 text-sm font-bold mb-0">Find content creators</div>
               <div className="flex items-center gap-2 mx-4.5">
                 <div className="flex items-center border-1 border-neutral rounded-lg px-2 w-[100%]">
                   <Search size={18}></Search>
-                  <Input type="text" className="border-none outline-0 text-[13px] focus-visible:ring-0 focus-visible:ring-offset-0 text-neutral-400 focus-visible:outline-none bg-background focus-visible:bg-transparent !bg-transparent" placeholder="Enter your business niche"></Input>
+                  <Input type="text" className="border-none outline-0 text-[13px] focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-neutral-400 focus-visible:outline-none bg-background focus-visible:bg-transparent !bg-transparent" placeholder="Enter your business niche"></Input>
                 </div>
                 <Combobox1 items={items} placeholder="Any country" icon={Globe}></Combobox1>
               </div>

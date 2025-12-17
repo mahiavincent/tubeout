@@ -92,7 +92,7 @@ export function WaitListForm({
                                 )}
                             </Field>
                             <FieldDescription className="text-center">
-                                <CountingNumber number={700}></CountingNumber> users already booked!!
+                                <CountingNumber number={700}></CountingNumber>+ users already booked!!
                             </FieldDescription>
                         </FieldGroup>
                     </form>

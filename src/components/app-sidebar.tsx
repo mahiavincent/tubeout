@@ -50,7 +50,7 @@ const data = {
     },
     {
       title: "Content Creators",
-      url: "/creators",
+      url: "/dashboard/creators",
       icon: IconUsers,
     },
     {

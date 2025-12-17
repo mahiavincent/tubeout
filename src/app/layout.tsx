@@ -15,8 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TubeOut - MVP",
-  description: "Search and contact Youtube creators for your business campaigns easily.",
+  title: "TubeOut - Find Content Creators and Influencers for your business",
+  description: "Search, rank and contact best content creators to market your products in minutes.",
+  keywords: [
+    "Youtube creator email finder",
+    "influencer outreach",
+    "creator marketing",
+  ],
+  metadataBase: new URL("https://tubeout.vercel.app"),
+  openGraph: {
+    title: "TubeOut",
+    description: "Find and contact content creators and influencers at scale in minutes.",
+    url: "https://tubeout.vercel.app",
+    siteName: "Tubeout",
+    images: [
+      "/favicon-light.svg"
+    ],
+    type: 'website'
+  },
   icons: {
     icon: [
       { url: "/favicon-light.svg", media: "(prefers-color-scheme: light)" },
