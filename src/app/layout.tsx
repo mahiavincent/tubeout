@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "influencer outreach",
     "creator marketing",
   ],
+  other: {
+    "google-site-verification": "B_PdnPOh2S6ZqILQpz2P2R0rCEv4f3B3eu6GxvOSzxk",
+  },
   metadataBase: new URL("https://tubeout.vercel.app"),
   openGraph: {
     title: "TubeOut",
